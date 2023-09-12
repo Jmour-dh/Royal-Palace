@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Header.module.scss";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
 
 function Header() {
