@@ -1,0 +1,26 @@
+.footer {
+  background-color: var(--background-color);
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .footerIcons{
+    display: flex;
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+    padding: 0 !important;
+  }
+
+  .socialIcons {
+    padding-right: 15px;
+    padding-left: 15px;
+    color: var(--primary);
+    font-size: large;
+  }
+
+  p {
+    font-size: small;
+  }
+}

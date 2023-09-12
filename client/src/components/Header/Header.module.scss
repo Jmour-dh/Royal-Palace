@@ -1,0 +1,19 @@
+.header {
+  background-color: var(--secondary);
+  height: 100px;
+  width: 100%;
+  cursor: pointer;
+  .logo {
+    font-family: var(--font-family-1);
+    color: var(--primary);
+
+    span {
+      font-size: 700;
+    }
+
+    p {
+      font-size: small;
+      font-weight: 50;
+    }
+  }
+}
