@@ -1,11 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import Home from "./components/Home";
 function Accueil() {
   return (
-    <div>
-      hh
-    </div>
-  )
+    <>
+      <Home />
+    </>
+  );
 }
 
-export default Accueil
+export default Accueil;
