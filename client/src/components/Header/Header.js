@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Header.module.scss";
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
 
 function Header() {
@@ -15,8 +15,22 @@ function Header() {
         <p>HOTELS & RESORTS</p>
       </div>
       <ul className="d-flex p-5">
-        <li className="mr-10">Accueil</li>
-        <li className="mr-10 ml-10">Restaurants & Bars</li>
+        <li className="mr-10">
+          <NavLink
+            className={({ isActive }) => (isActive ? "Linkactive" : "")}
+            to="/"
+          >
+            Accueil
+          </NavLink>
+        </li>
+        <li className="mr-10 ml-10">
+          <NavLink
+            className={({ isActive }) => (isActive ? "Linkactive" : "")}
+            to="/resto"
+          >
+            Restaurants & Bars
+          </NavLink>
+        </li>
         <li className="mr-10 ml-10">Gallery</li>
         <li className="mr-10 ml-10">Location & Details</li>
         <li className="mr-10 ml-10">Reserver</li>
