@@ -1,0 +1,28 @@
+.decouvrir {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  border: 1px solid var(--primary);
+  .images {
+    height: 100%;
+    width: 100%;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .dec {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    top: 0; /* Placez-le en haut de .decouvrir */
+    left: 0; /* Alignez-le à gauche de .decouvrir */
+    width: 100%; /* Faites en sorte qu'il ait la largeur de .decouvrir */
+    height: calc(100% - 100px)
+  }
+}

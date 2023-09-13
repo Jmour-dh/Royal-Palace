@@ -31,7 +31,14 @@ function Header() {
             Restaurants & Bars
           </NavLink>
         </li>
-        <li className="mr-10 ml-10">Gallery</li>
+        <li className="mr-10 ml-10">
+          <NavLink
+            className={({ isActive }) => (isActive ? "Linkactive" : "")}
+            to="/resto"
+          >
+            Gallery
+          </NavLink>
+        </li>
         <li className="mr-10 ml-10">Location & Details</li>
         <li className="mr-10 ml-10">Reserver</li>
         <li className=" ml-10">

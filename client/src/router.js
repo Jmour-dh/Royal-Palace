@@ -6,7 +6,8 @@ import { rootLoader } from "./components/loaders/rootLoader";
 // import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 const Accueil = lazy(() => import("./components/pages/accueil/Accueil"));
-const Reto = lazy(() => import("./components/pages/resto/Resto"));
+const Resto = lazy(() => import("./components/pages/resto/Resto"));
+const Gallery = lazy(() => import("./components/pages/gallery/Gallery"))
 
 export const router = createBrowserRouter([
   {
@@ -21,8 +22,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/resto",
-        element: <Reto />,
-      }
+        element: <Resto />,
+      },
+      {
+        path: "/gallery",
+        element: <Gallery />,
+      },
     ]
   }
 ]);
