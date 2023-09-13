@@ -20,9 +20,9 @@
     justify-content: center;
     align-items: center;
     z-index: 1;
-    top: 0; /* Placez-le en haut de .decouvrir */
-    left: 0; /* Alignez-le à gauche de .decouvrir */
-    width: 100%; /* Faites en sorte qu'il ait la largeur de .decouvrir */
+    top: 0; 
+    left: 0; 
+    width: 100%; 
     height: calc(100% - 100px)
   }
 }
