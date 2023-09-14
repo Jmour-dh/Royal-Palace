@@ -8,6 +8,7 @@ import { rootLoader } from "./components/loaders/rootLoader";
 const Accueil = lazy(() => import("./components/pages/accueil/Accueil"));
 const Resto = lazy(() => import("./components/pages/resto/Resto"));
 const Gallery = lazy(() => import("./components/pages/gallery/Gallery"))
+const Localisation = lazy(() => import("./components/pages/localisation/Localisation"))
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
       {
         path: "/gallery",
         element: <Gallery />,
+      },
+      {
+        path: "/localisation",
+        element: <Localisation />,
       },
     ]
   }

@@ -39,7 +39,13 @@ function Header() {
             Gallery
           </NavLink>
         </li>
-        <li className="mr-10 ml-10">Location & Details</li>
+        <li className="mr-10 ml-10">
+        <NavLink
+            className={({ isActive }) => (isActive ? "Linkactive" : "")}
+            to="/resto"
+          >
+            Location & Details
+          </NavLink></li>
         <li className="mr-10 ml-10">Reserver</li>
         <li className=" ml-10">
           <AiOutlineUser style={{ marginBottom: "2px" }} />
