@@ -1,0 +1,56 @@
+.Section_signature {
+
+    .PSignature {
+        text-align: center;
+        margin: 70px 10em  30px;
+        h1 {
+            font-family: Objectivity, Helvetica, sans-serif;
+            font-size: 3rem;
+            font-weight: 500;
+            line-height: 2.5rem;
+            color: #8c7343;
+            letter-spacing: -.5px;
+            line-height: 3.375rem;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            font-family: Helvetica, sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 1.5px;
+            color: #474747;
+        }
+    }
+
+    .Grid_section_signature {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 11px;
+        width: 80%;
+        margin: 0 auto 50px;
+        
+        img {
+            width: 100%;
+        }
+        .GridP{
+            h1{
+                font-family: Objectivity,Helvetica,sans-serif;
+                font-size: 2.5rem;
+                font-weight: 500;
+                line-height: 2.5rem;
+                color: #8c7343;
+                letter-spacing: -.5px;
+                line-height: 3.375rem;
+                margin-bottom: 0.5em;
+            }
+            p{
+                font-family: Helvetica,sans-serif;
+                font-size: 1rem;
+                letter-spacing: 1px;
+                color: #474747;
+            }
+        }
+    }
+}

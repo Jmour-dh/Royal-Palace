@@ -7,7 +7,7 @@ import { rootLoader } from "./components/loaders/rootLoader";
 
 const Accueil = lazy(() => import("./components/pages/accueil/Accueil"));
 const Resto = lazy(() => import("./components/pages/resto/Resto"));
-const Location = lazy(() => import("./components/pages/location/Location"))
+
 
 export const router = createBrowserRouter([
   {
@@ -24,10 +24,6 @@ export const router = createBrowserRouter([
         path: "/resto",
         element: <Resto />,
       },
-      {
-        path: "/location",
-        element: <Location />,
-      }
     ]
   }
 ]);

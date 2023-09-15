@@ -1,0 +1,36 @@
+.Grid_resto {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    border: 1px solid #8c7343;
+    text-align: center;
+    margin-top: 50px;
+    width: 85%;
+    margin: auto;
+
+    img{
+        width: 100%;
+    }
+    h1{
+        font-family: Objectivity,Helvetica,sans-serif;
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 2.5rem;
+        color: #8c7343;
+        letter-spacing: -.5px;
+        line-height: 3.375rem;
+        margin-bottom: 0.5em;
+    }
+    p{
+        font-family: Helvetica,sans-serif;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        color: #474747;
+    }
+    .RGrid_resto{
+        padding: 0 90px;
+        margin: auto 0;
+    }
+}
