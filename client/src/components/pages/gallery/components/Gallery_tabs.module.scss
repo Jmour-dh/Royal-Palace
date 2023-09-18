@@ -1,0 +1,41 @@
+.tabs {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.tabs label {
+	order: 1;
+	display: block;
+	padding: 1rem 2rem;
+	cursor: pointer;
+	background: #8c7343;
+	transition: ease 0.2s;
+	color: white;
+	font-family: Helvetica, sans-serif;
+	font-size: 1.2rem;
+    letter-spacing: 1.5px;
+	border: 1px solid #8c7343;
+}
+
+.tabs .tab {
+	order: 99; // Put the tabs last
+	flex-grow: 1;
+	width: 100%;
+	display: none;
+	padding: 1rem;
+	background: #f1f1f1;
+}
+
+.tabs input[type="radio"] {
+	display: none;
+}
+
+.tabs input[type="radio"]:checked+label {
+	background: #f1f1f1;
+	color: black;
+}
+
+.tabs input[type="radio"]:checked+label+.tab {
+	display: block;
+}
