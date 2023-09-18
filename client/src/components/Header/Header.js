@@ -40,15 +40,22 @@ function Header() {
           </NavLink>
         </li>
         <li className="mr-10 ml-10">
-        <NavLink
+          <NavLink
             className={({ isActive }) => (isActive ? "Linkactive" : "")}
             to="/resto"
           >
             Location & Details
-          </NavLink></li>
+          </NavLink>
+        </li>
         <li className="mr-10 ml-10">Reserver</li>
+
         <li className=" ml-10">
-          <AiOutlineUser style={{ marginBottom: "2px" }} />
+          <NavLink
+            className={({ isActive }) => (isActive ? "Linkactive" : "")}
+            to="/signin"
+          >
+            <AiOutlineUser style={{ marginBottom: "2px" }} />
+          </NavLink>
         </li>
       </ul>
     </header>
