@@ -5,9 +5,16 @@ import { AiOutlineUser } from "react-icons/ai";
 
 function Header() {
   const location = useLocation();
+  const getHeaderClassName = () => {
+    if ( location.pathname === "/signin" || location.pathname === "/signup") {
+      return styles.headerCnx; // Apply different styles for the "Profile" page
+    } else {
+      return styles.headerDefault; // Apply default styles for other pages
+    }
+  };
   return (
     <header
-      className={`${styles.header} d-flex  flex-column justify-content-center align-items-center`}
+      className={`${getHeaderClassName()} d-flex  flex-column justify-content-center align-items-center`}
     >
       <div
         className={`${styles.logo} d-flex flex-column justify-content-center align-items-center`}
