@@ -7,10 +7,13 @@ import { rootLoader } from "./components/loaders/rootLoader";
 
 const Accueil = lazy(() => import("./components/pages/accueil/Accueil"));
 const Resto = lazy(() => import("./components/pages/resto/Resto"));
-const Gallery = lazy(() => import("./components/pages/gallery/Gallery"))
-const Localisation = lazy(() => import("./components/pages/localisation/Localisation"))
-const Signin = lazy(() => import("./components/pages/cnx/Signin"))
-const Signup = lazy(() => import("./components/pages/cnx/Signup"))
+
+const Gallery = lazy(() => import("./components/pages/gallery/Gallery"));
+const Localisation = lazy(() =>
+  import("./components/pages/localisation/Localisation")
+);
+const Signin = lazy(() => import("./components/pages/cnx/Signin"));
+const Signup = lazy(() => import("./components/pages/cnx/Signup"));
 const Contact = lazy(() => import("./components/pages/contact/Contact"));
 
 export const router = createBrowserRouter([
@@ -19,7 +22,7 @@ export const router = createBrowserRouter([
     element: <App />,
     loader: rootLoader,
     errorElement: <ErrorPage />,
-    children: [ 
+    children: [
       {
         index: true,
         element: <Accueil />,
@@ -28,6 +31,7 @@ export const router = createBrowserRouter([
         path: "/resto",
         element: <Resto />,
       },
+
       {
         path: "/gallery",
         element: <Gallery />,
@@ -37,17 +41,17 @@ export const router = createBrowserRouter([
         element: <Localisation />,
       },
       {
-        path:"/signin",
+        path: "/signin",
         element: <Signin />,
       },
       {
-        path:"/signup",
+        path: "/signup",
         element: <Signup />,
       },
       {
-        path:"/contact",
+        path: "/contact",
         element: <Contact />,
-      }
-    ]
-  }
+      },
+    ],
+  },
 ]);

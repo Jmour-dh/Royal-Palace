@@ -32,6 +32,7 @@ function Header() {
             Restaurants & Bars
           </NavLink>
         </li>
+
         <li className="mr-10 ml-10">
           <NavLink
             className={({ isActive }) => (isActive ? "Linkactive" : "")}
@@ -40,10 +41,11 @@ function Header() {
             Gallery
           </NavLink>
         </li>
+
         <li className="mr-10 ml-10">
           <NavLink
             className={({ isActive }) => (isActive ? "Linkactive" : "")}
-            to="/resto"
+            to="location"
           >
             Location & Details
           </NavLink>
@@ -52,7 +54,11 @@ function Header() {
 
         <li className=" ml-10">
           <NavLink
-            className={location.pathname === "/signin" || location.pathname === "/signup" ? "Linkactive" : ""}
+            className={
+              location.pathname === "/signin" || location.pathname === "/signup"
+                ? "Linkactive"
+                : ""
+            }
             to="/signin"
           >
             <AiOutlineUser style={{ marginBottom: "2px" }} />
