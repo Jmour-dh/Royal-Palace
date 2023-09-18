@@ -12,7 +12,3 @@ function Gallery() {
 }
 
 export default Gallery
-<<<<<<< HEAD
-
-=======
->>>>>>> a656697973bd2b3c4323d843e427528a7304f62f

@@ -1,0 +1,13 @@
+.Hotel_Gallery {
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    img {
+        height: 40%;
+        width: 40%;
+        padding: 0.3rem 0.3rem;
+    }
+}
