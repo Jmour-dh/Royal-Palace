@@ -36,7 +36,7 @@ function Header() {
         <li className="mr-10 ml-10">
           <NavLink
             className={({ isActive }) => (isActive ? "Linkactive" : "")}
-            to="/resto"
+            to="/gallery"
           >
             Gallery
           </NavLink>
@@ -45,7 +45,7 @@ function Header() {
         <li className="mr-10 ml-10">
           <NavLink
             className={({ isActive }) => (isActive ? "Linkactive" : "")}
-            to="location"
+            to="/localisation"
           >
             Location & Details
           </NavLink>
