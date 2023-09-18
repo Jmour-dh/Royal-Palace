@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Gallery_tabs.module.scss'
-import Hotel_Gallery from './tabs_components/Hotel_Gallery';
+import Hotel_Gallery from './tabsComponents/Hotel_Gallery';
 
 function Gallery_tabs() {
     return (
