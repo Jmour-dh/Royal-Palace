@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./Header.module.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
 
 function Header() {
+  const location = useLocation();
   return (
     <header
       className={`${styles.header} d-flex  flex-column justify-content-center align-items-center`}
@@ -51,7 +52,7 @@ function Header() {
 
         <li className=" ml-10">
           <NavLink
-            className={({ isActive }) => (isActive ? "Linkactive" : "")}
+            className={location.pathname === "/signin" || location.pathname === "/signup" ? "Linkactive" : ""}
             to="/signin"
           >
             <AiOutlineUser style={{ marginBottom: "2px" }} />

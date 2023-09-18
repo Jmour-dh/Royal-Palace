@@ -37,7 +37,8 @@ function Signin() {
         <div className="p-10">
           <p>
             Pas de compte ?{" "}
-            <NavLink className={styles.linkIns} to="/signin">
+            <NavLink 
+            className={styles.linkIns} to="/signup">
               Inscrivez-vous
             </NavLink>
           </p>

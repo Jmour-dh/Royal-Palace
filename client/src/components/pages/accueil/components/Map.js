@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Map.module.scss"
+import { NavLink } from "react-router-dom";
+
 function MapComponent() {
   return (
     <div className={styles.mapCom}>
@@ -15,6 +17,9 @@ function MapComponent() {
         <h3>Location</h3>
         <h5>Europe <br/>Greece <br/>Arcadia</h5>
         <p>Royal Palace Korfoxylia, Magouliana Arcadia 22010 Greece</p>
+        
+        <NavLink className="btn btn-primary m-10"  to="/contact">Contacter-nous</NavLink>
+      
       </div>
     </div>
   );

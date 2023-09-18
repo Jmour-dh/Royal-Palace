@@ -10,6 +10,8 @@ const Resto = lazy(() => import("./components/pages/resto/Resto"));
 const Gallery = lazy(() => import("./components/pages/gallery/Gallery"))
 const Localisation = lazy(() => import("./components/pages/localisation/Localisation"))
 const Signin = lazy(() => import("./components/pages/cnx/Signin"))
+const Signup = lazy(() => import("./components/pages/cnx/Signup"))
+const Contact = lazy(() => import("./components/pages/contact/Contact"));
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +39,14 @@ export const router = createBrowserRouter([
       {
         path:"/signin",
         element: <Signin />,
+      },
+      {
+        path:"/signup",
+        element: <Signup />,
+      },
+      {
+        path:"/contact",
+        element: <Contact />,
       }
     ]
   }
