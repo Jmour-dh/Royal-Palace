@@ -15,7 +15,6 @@
     width: 20%;
     height: 100%;
     border-right: 1px solid black;
-   
 
     .phone {
       width: 80%;
@@ -34,7 +33,6 @@
         padding: 5px 0;
       }
       span {
-      
         text-decoration: underline;
       }
     }
@@ -43,6 +41,7 @@
   .contRight {
     width: 80%;
     height: 100%;
+    margin-right: 15%;
 
     form {
       padding: 30px 10px;
@@ -71,6 +70,11 @@
           padding-left: 10px;
           padding-top: 30px;
         }
+      }
+
+      input[type="checkbox"] {
+        width: 30px;
+        height: 1rem;
       }
     }
   }

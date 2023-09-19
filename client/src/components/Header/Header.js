@@ -10,7 +10,11 @@ function Header() {
   const location = useLocation();
 
   const getHeaderClassName = () => {
-    if (location.pathname === "/signin" || location.pathname === "/signup" || location.pathname === "/contact") {
+    if (
+      location.pathname === "/signin" ||
+      location.pathname === "/signup" ||
+      location.pathname === "/contact"
+    ) {
       return styles.headerCnx; // Apply different styles for the "Profile" page
     } else {
       return styles.headerDefault; // Apply default styles for other pages
@@ -26,7 +30,7 @@ function Header() {
         <span>Royal Palace</span>
         <p>HOTELS & RESORTS</p>
       </div>
-<<<<<<< HEAD
+
       {user ? (
         <ul className="d-flex p-5">
           <li className="mr-10">
@@ -100,45 +104,6 @@ function Header() {
           </li>
         </ul>
       )}
-=======
-      <ul className="d-flex p-5">
-        <li className="mr-10">
-          <NavLink
-            className={({ isActive }) => (isActive ? "Linkactive" : "")}
-            to="/"
-          >
-            Accueil
-          </NavLink>
-        </li>
-        <li className="mr-10 ml-10">
-          <NavLink
-            className={({ isActive }) => (isActive ? "Linkactive" : "")}
-            to="/resto"
-          >
-            Restaurants & Bars
-          </NavLink>
-        </li>
-        <li className="mr-10 ml-10">
-          <NavLink
-            className={({ isActive }) => (isActive ? "Linkactive" : "")}
-            to="/resto"
-          >
-            Gallery
-          </NavLink>
-        </li>
-        <li className="mr-10 ml-10">
-        <NavLink
-            className={({ isActive }) => (isActive ? "Linkactive" : "")}
-            to="/localisation"
-          >
-            Location & Details
-          </NavLink></li>
-        <li className="mr-10 ml-10">Reserver</li>
-        <li className=" ml-10">
-          <AiOutlineUser style={{ marginBottom: "2px" }} />
-        </li>
-      </ul>
->>>>>>> origin/udoy
     </header>
   );
 }
