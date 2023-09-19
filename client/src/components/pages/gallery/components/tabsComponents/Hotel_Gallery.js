@@ -9,16 +9,23 @@ function Hotel_Gallery() {
     return (
         <div className={styles.Tabs_Gallery}>
             <div className={styles.descriptiontabs}>
-                <img src={hotel1} alt="" />
+                <img src={hotel1} alt="L'entrée"/>
+                <h2>Une belle entrée Royal-Palace</h2>
             </div>
+
             <div className={styles.descriptiontabs}>
-                <img src={hotel2} alt="" />
+                <img src={hotel2} alt="Salle d'attente" />
+                <h2>Salle d'attente</h2>
             </div>
+
             <div className={styles.descriptiontabs}>
                 <img src={hotel3} alt="" />
+                <h2>Hall d'entrée</h2>
             </div>
+
             <div className={styles.descriptiontabs}>
-                <img src={hotel4} alt="" />
+                <img src={hotel4} alt="piscine" />
+                <h2>Vue depuis la piscine</h2>
             </div>
         </div>
     );
