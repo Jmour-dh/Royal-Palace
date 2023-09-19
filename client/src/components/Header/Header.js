@@ -42,7 +42,7 @@ function Header() {
         <li className="mr-10 ml-10">
         <NavLink
             className={({ isActive }) => (isActive ? "Linkactive" : "")}
-            to="/resto"
+            to="/localisation"
           >
             Location & Details
           </NavLink></li>

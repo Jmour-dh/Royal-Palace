@@ -10,6 +10,7 @@ const Resto = lazy(() => import("./components/pages/resto/Resto"));
 const Gallery = lazy(() => import("./components/pages/gallery/Gallery"))
 const Localisation = lazy(() => import("./components/pages/localisation/Localisation"))
 
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +34,7 @@ export const router = createBrowserRouter([
         path: "/localisation",
         element: <Localisation />,
       },
+     
     ]
   }
 ]);

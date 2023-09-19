@@ -1,0 +1,21 @@
+.view{
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 20px;
+    
+    h5{
+        color:var(--primary);
+        text-align: center;
+        font-size: 15px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    h4{
+        color:var(--primary);
+        text-align: center;
+    }
+    img{
+        border-radius: 20px;
+    }
+}
