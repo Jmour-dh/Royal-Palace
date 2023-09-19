@@ -16,6 +16,7 @@ const Signin = lazy(() => import("./components/pages/cnx/Signin"));
 const Signup = lazy(() => import("./components/pages/cnx/Signup"));
 const Contact = lazy(() => import("./components/pages/contact/Contact"));
 const Profile = lazy(() => import("./components/pages/profile/Profile"));
+const Reserver = lazy(() => import("./components/pages/reserver/Reserver"));
 
 export const router = createBrowserRouter([
   {
@@ -58,6 +59,14 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <Profile />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/reserver",
+        element: (
+          <ProtectedRoute>
+            <Reserver />
           </ProtectedRoute>
         ),
       },
