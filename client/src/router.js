@@ -18,6 +18,7 @@ const Contact = lazy(() => import("./components/pages/contact/Contact"));
 const Profile = lazy(() => import("./components/pages/profile/Profile"));
 const Reserver = lazy(() => import("./components/pages/reserver/Reserver"));
 
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +43,7 @@ export const router = createBrowserRouter([
         path: "/localisation",
         element: <Localisation />,
       },
+
       {
         path: "/signin",
         element: <Signin />,
@@ -73,3 +75,7 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
+
+     
+
+
