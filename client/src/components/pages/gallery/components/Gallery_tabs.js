@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Gallery_tabs.module.scss'
 import Hotel_Gallery from './tabsComponents/Hotel_Gallery';
+import ChambresGallery from './tabsComponents/ChambresGallery';
 
 function Gallery_tabs() {
     return (
@@ -10,6 +11,7 @@ function Gallery_tabs() {
                     <label for="tabone">All</label>
                     <div className={styles.tab}>
                             <Hotel_Gallery/>
+                            <ChambresGallery/>
                     </div>
 
                     <input type="radio" name="tabs" id="tabtwo" />

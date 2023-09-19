@@ -1,13 +1,16 @@
-.Hotel_Gallery {
+.Tabs_Gallery {
 
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
-    img {
+    .descriptiontabs {
         height: 40%;
         width: 40%;
         padding: 0.3rem 0.3rem;
+    }
+    img{
+        width: 100%;
     }
 }

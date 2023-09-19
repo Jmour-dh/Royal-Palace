@@ -1,13 +1,9 @@
 import React from 'react';
-import styles from './TabsGallery.module.scss';
-import hotel1 from "../../../../../assets/images/tabs_hotel1.jpg"
-import hotel2 from "../../../../../assets/images/tabs_hotel2.webp"
-import hotel3 from "../../../../../assets/images/tabs_hotel3.jpg"
-import hotel4 from "../../../../../assets/images/tabs_hotel4.jpg"
+import styles from "./TabsGallery.module.scss"
 
-function Hotel_Gallery() {
+function RestoBar() {
     return (
-        <div className={styles.Tabs_Gallery}>
+        <div className={styles.Tabs_Gallery}> 
             <div className={styles.descriptiontabs}>
                 <img src={hotel1} alt="" />
             </div>
@@ -24,4 +20,4 @@ function Hotel_Gallery() {
     );
 }
 
-export default Hotel_Gallery;
+export default RestoBar;
