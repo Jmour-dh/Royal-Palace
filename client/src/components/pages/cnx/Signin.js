@@ -49,7 +49,11 @@ function Signin() {
   return (
     <>
       {user ? (
-        <Navigate to="/profile" />
+        user.admin === true ? (
+          <Navigate to="/admin" />
+        ) : (
+          <Navigate to="/profile" />
+        )
       ) : (
         <div className={styles.cnx}>
           <div className={styles.signin}>
@@ -90,7 +94,12 @@ function Signin() {
                 </div>
               )}
               <div className="d-flex justify-content-center ">
-                <button disabled={isSubmitting} className="btn btn-primary  m-10">Se Connecter</button>
+                <button
+                  disabled={isSubmitting}
+                  className="btn btn-primary  m-10"
+                >
+                  Se Connecter
+                </button>
               </div>
             </form>
             <div className="p-10">

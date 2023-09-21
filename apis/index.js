@@ -6,12 +6,12 @@ const routes = require("./routes");
 app.use(cookie());
 app.use(express.json());
 
-require("./database");
-
 app.use(routes);
 
 app.use("*", (req, res) => {
   res.status(404).json("mauvaise routes");
 });
+
+require("./database/queries");
 
 app.listen(3001);
