@@ -15,7 +15,7 @@ function Signup() {
       .string()
       .required("Il faut préciser votre nom")
       .min(2, "Un vrai nom"),
-    lName: yup
+    lname: yup
       .string()
       .required("Il faut préciser votre nom")
       .min(2, "Un vrai nom"),
@@ -86,17 +86,17 @@ function Signup() {
             {errors.name && <p className="form-error">{errors.name.message}</p>}
           </div>
           <div className="mb-10 d-flex flex-column">
-            <label htmlFor="lName" className="mb-10">
+            <label htmlFor="lname" className="mb-10">
               Prénom :
             </label>
             <input
               type="text"
-              name="lName"
+              name="lname"
               placeholder="Entrez votre prénom..."
-              {...register("lName")}
+              {...register("lname")}
             />
-            {errors.lName && (
-              <p className="form-error">{errors.lName.message}</p>
+            {errors.lname && (
+              <p className="form-error">{errors.lname.message}</p>
             )}
           </div>
           <div className="mb-10 d-flex flex-column">

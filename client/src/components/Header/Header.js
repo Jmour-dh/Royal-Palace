@@ -32,27 +32,43 @@ function Header() {
       </div>
 
       {user ? (
-        <ul className="d-flex p-5">
-          <li className="mr-10">
-            <NavLink
-              className={({ isActive }) => (isActive ? "Linkactive" : "")}
-              to="/profile"
-            >
-              Profil
-            </NavLink>
-          </li>
-          <li className="mr-10 ml-10">
-            <NavLink
-              className={({ isActive }) => (isActive ? "Linkactive" : "")}
-              to="/reserver"
-            >
-              Réserver
-            </NavLink>
-          </li>
-          <li className="ml-10">
-            <NavLink onClick={() => signout()}>Déconnexion</NavLink>
-          </li>
-        </ul>
+        user.admin === true ? (
+          <ul className="d-flex p-5">
+            <li className="mr-10">
+              <NavLink
+                className={({ isActive }) => (isActive ? "Linkactive" : "")}
+                to="/admin"
+              >
+                Profil admin
+              </NavLink>
+            </li>
+            <li className="ml-10">
+              <NavLink onClick={() => signout()}>Déconnexion</NavLink>
+            </li>
+          </ul>
+        ) : (
+          <ul className="d-flex p-5">
+            <li className="mr-10">
+              <NavLink
+                className={({ isActive }) => (isActive ? "Linkactive" : "")}
+                to="/profile"
+              >
+                Profil
+              </NavLink>
+            </li>
+            <li className="mr-10 ml-10">
+              <NavLink
+                className={({ isActive }) => (isActive ? "Linkactive" : "")}
+                to="/reserver"
+              >
+                Réserver
+              </NavLink>
+            </li>
+            <li className="ml-10">
+              <NavLink onClick={() => signout()}>Déconnexion</NavLink>
+            </li>
+          </ul>
+        )
       ) : (
         <ul className="d-flex p-5">
           <li className="mr-10">

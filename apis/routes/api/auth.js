@@ -1,4 +1,4 @@
-const UserModel = require("../../database/models/user.model");
+const pool = require("../../database/queries");
 const bcrypt = require("bcrypt");
 const router = require("express").Router();
 const jsonwebtoken = require("jsonwebtoken");
@@ -7,25 +7,32 @@ const { key, keyPub } = require("../../keys");
 router.post("/", async (req, res) => {
   const { email, password } = req.body;
   try {
-    const user = await UserModel.findOne({ email }).exec();
-    if (user) {
+    // Requête SQL pour récupérer l'utilisateur par email
+    const query = "SELECT * FROM users WHERE email = $1";
+    const { rows } = await pool.query(query, [email]);
+
+    if (rows.length === 1) {
+      const user = rows[0];
+
       if (bcrypt.compareSync(password, user.password)) {
         const token = jsonwebtoken.sign({}, key, {
-          subject: user._id.toString(),
+          subject: user.id.toString(),
           expiresIn: 3600 * 24 * 30 * 6,
           algorithm: "RS256",
         });
-          res.cookie("token", token, { httpOnly: true });
+
+        // Supprimez le code de gestion des cookies ici et envoyez simplement le token dans la réponse
+        res.cookie("token", token, { httpOnly: true });
         res.json(user);
       } else {
-        res.status(400).json("Mauvais email/password");
+        res.status(400).json("Mauvais email/mot de passe");
       }
     } else {
-      res.status(400).json("Mauvais email/password");
+      res.status(400).json("Mauvais email/mot de passe");
     }
   } catch (e) {
-    console.log(e);
-    res.status(400).json("Mauvais email/password");
+    console.error(e);
+    res.status(400).json("Mauvais email/mot de passe");
   }
 });
 
@@ -34,24 +41,31 @@ router.get("/current", async (req, res) => {
   if (token) {
     try {
       const decodedToken = jsonwebtoken.verify(token, keyPub);
-      const currentUser = await UserModel.findById(decodedToken.sub)
-        .select("-password -__v")
-        .exec();
-      if (currentUser) {
-        return res.json(currentUser);
+
+      // Requête SQL pour récupérer l'utilisateur par ID
+      const query = "SELECT * FROM users WHERE id = $1";
+      const { rows } = await pool.query(query, [decodedToken.sub]);
+
+      if (rows.length === 1) {
+        const currentUser = rows[0];
+        // Supprimez les champs sensibles, comme le mot de passe
+        delete currentUser.password;
+        delete currentUser.__v;
+        res.json(currentUser);
       } else {
-        return res.json(null);
+        res.json(null);
       }
     } catch (e) {
-      console.log(e);
-      return res.json(null);
+      console.error(e);
+      res.json(null);
     }
   } else {
-    return res.json(null);
+    res.json(null);
   }
 });
 
 router.delete("/", (req, res) => {
+  // Supprimez le cookie côté serveur ici si nécessaire
   res.clearCookie("token");
   res.end();
 });

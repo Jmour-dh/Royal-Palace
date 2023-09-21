@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
+import { createContact} from "../../../apis/contacts";
 
 function Contact() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ function Contact() {
       .string()
       .required("Il faut préciser votre nom")
       .min(2, "Un vrai nom"),
-    lName: yup
+    lname: yup
       .string()
       .required("Il faut préciser votre nom")
       .min(2, "Un vrai nom"),
@@ -20,19 +21,17 @@ function Contact() {
       .string()
       .required("Il faut préciser votre email")
       .email("L'email n'est pas valide"),
-    phone: yup
-      .string(),
-      // .required("Il faut préciser votre numéro de téléphone")
-      // .matches(
-      //   /^\+(?:[0-9] ?){6,10}[0-9]$/,
-      //   "Le numéro de téléphone n'est pas valide. Il doit commencer par '+' suivi de 6 à 14 chiffres."
-      // ),
+    phone: yup.string()
+     .required("Il faut préciser votre numéro de téléphone"),
+    // .matches(
+    //   /^\+(?:[0-9] ?){6,10}[0-9]$/,
+    //   "Le numéro de téléphone n'est pas valide. Il doit commencer par '+' suivi de 6 à 14 chiffres."
+    // ),
     msg: yup
       .string()
       .required("Il faut préciser votre message")
       .min(6, "Il faut un message explicatif")
       .max(100, "Il faut un message de 100 caractères"),
-    check: yup.string().required("valider les conditions générale"),
   });
 
   const initialValues = {
@@ -41,7 +40,6 @@ function Contact() {
     email: "",
     phone: "",
     msg: "",
-    check: "",
   };
 
   const {
@@ -58,7 +56,7 @@ function Contact() {
   const submit = handleSubmit(async (contact) => {
     try {
       clearErrors();
-      // await createContact(contact);
+      await createContact(contact);
       navigate("/");
     } catch (message) {
       setError("generic", { type: "generic", message });
@@ -105,12 +103,12 @@ function Contact() {
             <input
               className="mb-20"
               type="text"
-              name="lName"
+              name="lname"
               placeholder="Entrez votre prénom..."
-              {...register("lName")}
+              {...register("lname")}
             />
-            {errors.lName && (
-              <p className="form-error">{errors.lName.message}</p>
+            {errors.lname && (
+              <p className="form-error">{errors.lname.message}</p>
             )}
             <input
               className="mb-20"
@@ -140,22 +138,7 @@ function Contact() {
               {...register("msg")}
             />
             {errors.msg && <p className="form-error">{errors.msg.message}</p>}
-            <div className="m-20 d-flex flex-row-reverse">
-              <label for="check">
-                j'accepte les conditions générales ds Design Hotels et j'ai lu
-                la politique de confientialité.
-              </label>
-              <input
-                type="checkbox"
-                id="check"
-                name="check"
-                value="valeur"
-                {...register("check")}
-              />
-              {errors.check && (
-                <p className="form-error">{errors.check.message}</p>
-              )}
-            </div>
+
             {errors.generic && (
               <div className="mb-10">
                 <p className="form-error">{errors.generic.message}</p>
