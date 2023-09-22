@@ -1,8 +1,13 @@
+@use '../../../../assets/styles/mixins' as mixins;
+
 .Section_signature {
 
     .PSignature {
         text-align: center;
         margin: 70px 10em  30px;
+        @include mixins.xs {
+            margin: 20px 3em  30px;
+          }
         h1 {
             font-family: Objectivity, Helvetica, sans-serif;
             font-size: 3rem;
@@ -12,6 +17,9 @@
             letter-spacing: -.5px;
             line-height: 3.375rem;
             margin-bottom: 0.5em;
+            @include mixins.xs {
+                font-size: 2rem;
+              }
         }
 
         p {
@@ -19,6 +27,9 @@
             font-size: 1.2rem;
             letter-spacing: 1.5px;
             color: #474747;
+            @include mixins.xs {
+                font-size: 1rem;
+              }
         }
     }
 
@@ -30,11 +41,25 @@
         grid-row-gap: 11px;
         width: 80%;
         margin: 0 auto 50px;
+        @include mixins.xs {
+            grid-template-columns: 1fr;
+            grid-template-rows:  1fr;
+          }
+          .GridContaint{
+            @include mixins.xs {
+                border: 1px solid #8c7343;
+                
+              }
+          }
         
         img {
             width: 100%;
         }
         .GridP{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             h1{
                 font-family: Objectivity,Helvetica,sans-serif;
                 font-size: 2.5rem;
@@ -50,6 +75,10 @@
                 font-size: 1rem;
                 letter-spacing: 1px;
                 color: #474747;
+                @include mixins.xs{
+                    padding: 10px 50px;
+
+                }
             }
         }
     }
