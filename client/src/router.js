@@ -17,7 +17,17 @@ const Signup = lazy(() => import("./components/pages/cnx/Signup"));
 const Contact = lazy(() => import("./components/pages/contact/Contact"));
 const Profile = lazy(() => import("./components/pages/profile/Profile"));
 const Reserver = lazy(() => import("./components/pages/reserver/Reserver"));
-const Admin = lazy(() => import("./components/pages/admin/Admin"))
+const Admin = lazy(() => import("./components/pages/admin/Admin"));
+const AdminReservations = lazy(() =>
+  import("./components/pages/admin/pages/AdminReservations/AdminReservations")
+);
+const AdminReservationsList = lazy(() =>
+  import(
+    "./components/pages/admin/pages/AdminReservations/pages/AdminReservationList/AdminReservationList"
+  )
+);
+const AdminUsers = lazy(() => import("./components/pages/admin/pages/AdminUsers/AdminUsers"));
+const AdminContacts = lazy(() => import("./components/pages/admin/pages/AdminContacts/AdminContacts"));
 
 export const router = createBrowserRouter([
   {
@@ -76,10 +86,29 @@ export const router = createBrowserRouter([
         path: "admin",
         element: (
           <ProtectedRoute>
-            <Admin />
+            <Admin />,
           </ProtectedRoute>
         ),
-        
+        children: [
+          {
+            path: "reservations",
+            element: <AdminReservations />,
+            children: [
+              {
+                path: "list",
+                element: <AdminReservationsList />,
+              },
+            ],
+          },
+          {
+            path: 'users',
+            element: <AdminUsers />,
+          },
+          {
+            path: 'contacts',
+            element: <AdminContacts />,
+          },
+        ],
       },
     ],
   },

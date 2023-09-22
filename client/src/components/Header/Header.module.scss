@@ -1,11 +1,79 @@
+@use "../../assets/styles/mixins" as mixin;
+
 .headerDefault {
   background-color: var(--secondary);
   height: 100px;
   width: 100%;
   cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+
+  @include mixin.xs {
+    background-color: var(--background-color);
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+  }
+
   .logo {
     font-family: var(--font-family-1);
     color: var(--primary);
+    @include mixin.xs {
+      display: none;
+    }
+    span {
+      font-size: 700;
+    }
+
+    p {
+      font-size: small;
+      font-weight: 50;
+    }
+  }
+
+  .headerList {
+    @include mixin.xs {
+      display: none;
+    }
+  }
+
+  .logoIcon {
+    display: none;
+    @include mixin.xs {
+      display: flex;
+      width: 30px;
+      height: 30px;
+      margin: 10px;
+      
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.headerCnx {
+  background-color: var(--background-color);
+  height: 100px;
+  width: 100%;
+  cursor: pointer;
+
+  flex-direction: column;
+  justify-content: center;
+
+  @include mixin.xs {
+    background-color: var(--background-color);
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+  }
+
+  .logo {
+    font-family: var(--font-family-1);
+    color: var(--primary);
+    @include mixin.xs {
+      display: none;
+    }
 
     span {
       font-size: 700;
@@ -16,25 +84,38 @@
       font-weight: 50;
     }
   }
-  
+
+  .headerList {
+    @include mixin.xs {
+      display: none;
+    }
+  }
+
+  .logoIcon {
+    display: none;
+    @include mixin.xs {
+      display: flex;
+      width: 30px;
+      height: 30px;
+
+      margin: 10px;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
 }
 
-.headerCnx {
-  background-color: var(--background-color);
-  height: 100px;
-  width: 100%;
+.headerXs {
+  display: none !important;
   cursor: pointer;
-  .logo {
-    font-family: var(--font-family-1);
-    color: var(--primary);
-
-    span {
-      font-size: 700;
-    }
-
-    p {
-      font-size: small;
-      font-weight: 50;
-    }
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.8;
+  }
+  @include mixin.xs {
+    display: block !important;
+    margin: 10px;
   }
 }

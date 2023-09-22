@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import { NavLink, useLocation } from "react-router-dom";
-import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineUser, AiOutlineBars } from "react-icons/ai";
 import { useContext } from "react";
 import { AuthContext } from "../context";
+import HeaderMenu from "./components/HeaderMenu/HeaderMenu";
+import logoIcon from "../../assets/icons/Royal_Palace_Logo.jpg";
 
 function Header() {
   const { user, signout } = useContext(AuthContext);
@@ -20,20 +22,23 @@ function Header() {
       return styles.headerDefault; // Apply default styles for other pages
     }
   };
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
-    <header
-      className={`${getHeaderClassName()} d-flex  flex-column justify-content-center align-items-center`}
-    >
+    <header className={`${getHeaderClassName()} d-flex    align-items-center`}>
       <div
         className={`${styles.logo} d-flex flex-column justify-content-center align-items-center`}
       >
         <span>Royal Palace</span>
         <p>HOTELS & RESORTS</p>
       </div>
+      <div className={styles.logoIcon}>
+        <img className={styles.ico} src={logoIcon} alt="logo" />
+      </div>
 
       {user ? (
         user.admin === true ? (
-          <ul className="d-flex p-5">
+          <ul className={`${styles.headerList} d-flex p-5`}>
             <li className="mr-10">
               <NavLink
                 className={({ isActive }) => (isActive ? "Linkactive" : "")}
@@ -47,7 +52,7 @@ function Header() {
             </li>
           </ul>
         ) : (
-          <ul className="d-flex p-5">
+          <ul className={`${styles.headerList} d-flex p-5`}>
             <li className="mr-10">
               <NavLink
                 className={({ isActive }) => (isActive ? "Linkactive" : "")}
@@ -70,7 +75,7 @@ function Header() {
           </ul>
         )
       ) : (
-        <ul className="d-flex p-5">
+        <ul className={`${styles.headerList} d-flex p-5`}>
           <li className="mr-10">
             <NavLink
               className={({ isActive }) => (isActive ? "Linkactive" : "")}
@@ -119,6 +124,16 @@ function Header() {
             </NavLink>
           </li>
         </ul>
+      )}
+      <AiOutlineBars
+        className={styles.headerXs}
+        onClick={() => setShowMenu(true)}
+      />
+      {showMenu && (
+        <>
+          <div onClick={() => setShowMenu(false)} className="calc"></div>
+          <HeaderMenu />
+        </>
       )}
     </header>
   );

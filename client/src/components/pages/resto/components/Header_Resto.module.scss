@@ -1,26 +1,38 @@
-.header_resto{
+@use "../../../../assets/styles/mixins" as mixin;
+
+.header_resto { 
     text-align: center;
 
-    .Pheader_resto{
-        margin: 70px 10em  30px;
+    .Pheader_resto {
+        margin: 70px 10px  30px;
 
+        @include mixin.xs {
+            margin: 10px 10px  30px;
+        }
+
+        h1{
+            font-family: Objectivity,Helvetica,sans-serif;
+            font-size: 3rem;
+            font-weight: 500;
+            line-height: 2.5rem;
+            color: #8c7343;
+            letter-spacing: -.5px;
+            line-height: 3.375rem;
+            margin-bottom: 0.5em;
+
+            @include mixin.xs {
+                color: black;
+            }
+        }
     }
-    h1{
-        font-family: Objectivity,Helvetica,sans-serif;
-        font-size: 3rem;
-        font-weight: 500;
-        line-height: 2.5rem;
-        color: #8c7343;
-        letter-spacing: -.5px;
-        line-height: 3.375rem;
-        margin-bottom: 0.5em;
-    }
+    
     p{
         font-family: Helvetica,sans-serif;
         font-size: 1.2rem;
         letter-spacing: 1.5px;
         color: #474747;
-        
+
+       
     }
     img{
         width: 100%;

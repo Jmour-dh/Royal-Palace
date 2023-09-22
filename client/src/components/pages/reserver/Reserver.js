@@ -1,10 +1,14 @@
-import React from 'react'
+import React from 'react';
+
 
 function Reserver() {
+ 
   return (
-    <div>
-      
-    </div>
+    
+    <>
+    <label>Date d'entrée</label>
+    <input type="date" />
+  </>
   )
 }
 
