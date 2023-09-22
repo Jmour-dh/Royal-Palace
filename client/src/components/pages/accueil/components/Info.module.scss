@@ -1,7 +1,14 @@
+@use "../../../../assets/styles/mixins" as mixin;
+
 .info {
   width: 100%;
   height: 400px;
   display: flex;
+
+  @include mixin.xs {
+    flex-direction: column;
+    height: 100%;
+  }
 
   .hotel {
     width: 50%;
@@ -14,6 +21,13 @@
     margin-top: 20px;
     padding: 20px;
 
+    @include mixin.xs {
+      width: 100%;
+      height: 100%;
+      border-right: none;
+      border-bottom: 1px solid var(--background-color);
+    }
+
     .imgHotel {
       width: 400px;
       height: 200px;
@@ -21,6 +35,9 @@
       img {
         width: 100%;
         height: 100%;
+        @include mixin.xs {
+          border-radius: 5px;
+        }
       }
     }
   }
@@ -34,8 +51,21 @@
     align-items: center;
     margin-top: 20px;
 
-    h3 {
+    @include mixin.xs {
+      width: 95%;
+      height: 98%;
+      border-right: none;
+      border-bottom: 1px solid var(--background-color);
+      margin: 5px;
+    }
+
+    p,h3 {
       width: 80%;
+      @include mixin.xs {
+        width: 100%;
+        margin: 5px;
+        text-align: center;
+      }
     }
 
     .imgRoom {
@@ -43,12 +73,16 @@
       height: 200px;
       margin-top: 10px;
       margin: 20px;
+
+      @include mixin.xs {
+        border-radius: 5px;
+      }
       img {
         width: 100%;
         height: 100%;
+
         
       }
     }
   }
-  }
-
+}
