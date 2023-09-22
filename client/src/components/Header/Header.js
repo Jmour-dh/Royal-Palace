@@ -32,12 +32,9 @@ function Header() {
         <span>Royal Palace</span>
         <p>HOTELS & RESORTS</p>
       </div>
-<<<<<<< HEAD
       <div className={styles.logoIcon}>
         <img className={styles.ico} src={logoIcon} alt="logo" />
       </div>
-=======
->>>>>>> 40508b5d03d6ab32516ab2d1b51596e0a69ad356
 
       {user ? (
         user.admin === true ? (
@@ -128,7 +125,6 @@ function Header() {
           </li>
         </ul>
       )}
-<<<<<<< HEAD
       <AiOutlineBars
         className={styles.headerXs}
         onClick={() => setShowMenu(true)}
@@ -139,9 +135,6 @@ function Header() {
           <HeaderMenu />
         </>
       )}
-=======
-    
->>>>>>> 40508b5d03d6ab32516ab2d1b51596e0a69ad356
     </header>
   );
 }
