@@ -1,28 +1,59 @@
 import React from 'react';
-import { Calendar } from 'react-big-calendar';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
+import styles from "./Mycalendar.module.scss";
 
-const MyCalendar = () => {
-  const events = [
-    {
-      title: 'Réunion importante',
-      start: new Date(2023, 9, 23, 10, 0), // Date et heure de début
-      end: new Date(2023, 9, 23, 12, 0), // Date et heure de fin
-    },
-    // Ajoutez d'autres événements ici
-  ];
-
+function MyCalendar() {
   return (
-    <div>
-      <h1>Calendrier</h1>
-      <Calendar
-        events={events}
-        startAccessor="start"
-        endAccessor="end"
-        defaultDate={new Date()}
-      />
+    
+<div className={styles.calendar}>
+
+    <div className={styles.reser}>
+    <h4>Réservation</h4>
     </div>
-  );
-};
+
+    
+    <div className={styles.entree} >
+    <label>Date d'entrée</label>
+    </div>
+    
+    <input className={styles.date-1} type="date" />
+
+    <div  className={styles.sorti}> 
+    <label >Date de sorti</label> 
+    <input className={styles.date-2} type="date" />
+    </div>
+
+    <div className={styles.adult}>
+    <label className={styles.adult}>Adult</label>
+    <input type='number' />
+    </div>
+
+    <div  className={styles.enfant} >
+    <label>Enfant</label>
+    <input type='number' />
+
+    <div className={styles.select}>
+    <label for="select">Chambre</label>
+                      <select id="Chambre" name="Chambre">
+                        <option value="Chambre Double Standard">Chambre Double Standard</option>
+                        <option value="Chambre Double Supérieure">Chambre Double Supérieure</option>
+                        <option value="Chambre Double Deluxe">Chambre Double Deluxe</option>
+                        <option value="Chambre VIP">Chambre VIP</option>
+                      </select>
+    </div>
+
+    <div className={styles.check}>
+    <input type='checkbox' />
+    <label className={styles.check}>J'accepte</label>
+    </div>
+
+    </div>
+    
+
+    <button>Reserver</button>
+    
+</div>
+    
+  )
+}
 
 export default MyCalendar;

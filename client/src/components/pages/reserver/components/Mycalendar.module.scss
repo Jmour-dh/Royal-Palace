@@ -1,0 +1,103 @@
+.calendar{
+    width: 300px;
+    padding: 50px;
+    margin: 13px auto;
+    border: 15px solid rgb(218, 201, 201);
+
+    .reser{
+        margin-bottom: 20px;
+        color: rgb(140, 115, 67);
+        border-right: 1px solid var(--primary);
+        border-left: 1px solid var(--primary);
+        font-style: italic;
+        text-decoration: underline;
+
+        h4{
+            margin-top: -20px;
+            text-align: center;
+        }
+    }
+
+    .entree{
+
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:italic;
+
+    }
+    .date-1{
+
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:italic;
+
+    }
+    .sorti{
+
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:italic;
+        margin-top: 10px;
+
+    }
+    .date-2{
+
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:italic;
+
+    }
+    .adult{
+        margin-top: 10px;
+
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:italic;
+
+    }
+    .enfant{
+
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style:italic;
+
+    }
+
+    .check{
+        margin-top: 8px;
+        font-style: normal;
+        font-weight: 600;
+    }
+
+
+    //button //
+
+
+    button {
+        --c:  rgb(140, 115, 67); /* the color*/
+        
+        box-shadow: 0 0 0 .1em inset var(--c); 
+        --_g: linear-gradient(var(--c) 0 0) no-repeat;
+        background: 
+          var(--_g) calc(var(--_p,0%) - 100%) 0%,
+          var(--_g) calc(200% - var(--_p,0%)) 0%,
+          var(--_g) calc(var(--_p,0%) - 100%) 100%,
+          var(--_g) calc(200% - var(--_p,0%)) 100%;
+        background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+        outline-offset: .1em;
+        transition: background-size .4s, background-position 0s .4s;
+      }
+      button:hover {
+        --_p: 100%;
+        transition: background-position .4s, background-size 0s;
+      }
+      button:active {
+        box-shadow: 0 0 9e9q inset #0009; 
+        background-color: var(--c);
+        color: #fff;
+      }
+      
+      button {
+        margin-left: 21px;
+        margin-top: 15px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.1em 0.6em;
+        font-weight: 500;
+        border: none;
+      }
+}
