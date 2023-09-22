@@ -66,7 +66,7 @@ function Contact() {
   return (
     <div className={styles.contact}>
       <h1>laissez-nous vous contacter</h1>
-      <div className="d-flex">
+      <div className="ctc">
         <div className={styles.contLeft}>
           <div className={styles.phone}>
             <h3>Applez-nous 24h/24 et 7j/7 sans frais</h3>
