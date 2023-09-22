@@ -12,4 +12,4 @@ function Reserver() {
   )
 }
 
-export default Reserver
+export default Reserver;
