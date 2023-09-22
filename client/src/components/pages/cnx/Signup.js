@@ -2,8 +2,67 @@ import React from "react";
 import styles from "./Signup.module.scss";
 import ImgLogo from "../../../assets/icons/Royal_Palace_Logo.jpg";
 import { NavLink } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useNavigate } from "react-router-dom";
+import { createUser } from "../../../apis/users";
 
 function Signup() {
+  const navigate = useNavigate();
+  const validationSchema = yup.object({
+    name: yup
+      .string()
+      .required("Il faut préciser votre nom")
+      .min(2, "Un vrai nom"),
+    lName: yup
+      .string()
+      .required("Il faut préciser votre nom")
+      .min(2, "Un vrai nom"),
+    email: yup
+      .string()
+      .required("Il faut préciser votre email")
+      .email("L'email n'est pas valide"),
+    password: yup
+      .string()
+      .required("Il faut préciser votre mot de passe")
+      .min(6, "Mot de passe trop court"),
+    confirmPassword: yup
+      .string()
+      .required("Vous devez confirmer votre mot de passe")
+      .oneOf(
+        [yup.ref("password"), ""],
+        "Les mots de passe ne correspondent pas"
+      ),
+  });
+
+  const initialValues = {
+    name: "",
+    lName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  };
+
+  const {
+    handleSubmit,
+    register,
+    formState: { errors, isSubmitting },
+    setError,
+    clearErrors,
+  } = useForm({
+    initialValues,
+    resolver: yupResolver(validationSchema),
+  });
+  const submit = handleSubmit(async (user) => {
+    try {
+      clearErrors();
+      await createUser(user);
+      navigate("/signin");
+    } catch (message) {
+      setError("generic", { type: "generic", message });
+    }
+  });
   return (
     <div className={styles.ins}>
       <div className={styles.signup}>
@@ -13,7 +72,7 @@ function Signup() {
           Vous y être presque! <br />
           Parlez-nous un peu plus de vous
         </span>
-        <form className={styles.form}>
+        <form onSubmit={submit} className={styles.form}>
           <div className="mb-10 d-flex flex-column">
             <label htmlFor="name" className="mb-10">
               Nom de famille :
@@ -22,7 +81,9 @@ function Signup() {
               type="text"
               name="name"
               placeholder="Entrez votre nom de famille..."
+              {...register("name")}
             />
+            {errors.name && <p className="form-error">{errors.name.message}</p>}
           </div>
           <div className="mb-10 d-flex flex-column">
             <label htmlFor="lName" className="mb-10">
@@ -32,7 +93,11 @@ function Signup() {
               type="text"
               name="lName"
               placeholder="Entrez votre prénom..."
+              {...register("lName")}
             />
+            {errors.lName && (
+              <p className="form-error">{errors.lName.message}</p>
+            )}
           </div>
           <div className="mb-10 d-flex flex-column">
             <label htmlFor="email" className="mb-10">
@@ -42,7 +107,11 @@ function Signup() {
               type="text"
               name="email"
               placeholder="Entrez votre mail..."
+              {...register("email")}
             />
+            {errors.email && (
+              <p className="form-error">{errors.email.message}</p>
+            )}
           </div>
           <div className="mb-10 d-flex flex-column">
             <label htmlFor="password" className="mb-10">
@@ -52,7 +121,11 @@ function Signup() {
               type="password"
               name="password"
               placeholder="Entrez votre mot de passe..."
+              {...register("password")}
             />
+            {errors.password && (
+              <p className="form-error">{errors.password.message}</p>
+            )}
           </div>
           <div className="mb-10 d-flex flex-column">
             <label htmlFor="name" className="mb-10">
@@ -63,10 +136,21 @@ function Signup() {
               type="password"
               name="confirmPassword"
               placeholder="Entrez votre mot de passe..."
+              {...register("confirmPassword")}
             />
+            {errors.confirmPassword && (
+              <p className="form-error">{errors.confirmPassword.message}</p>
+            )}
           </div>
+          {errors.generic && (
+            <div className="mb-10">
+              <p className="form-error">{errors.generic.message}</p>
+            </div>
+          )}
           <div className="d-flex justify-content-center ">
-            <button className="btn btn-primary  m-10">Valider</button>
+            <button disabled={isSubmitting} className="btn btn-primary  m-10">
+              Valider
+            </button>
           </div>
         </form>
         <div className="p-10">

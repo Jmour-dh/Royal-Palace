@@ -1,0 +1,32 @@
+.Tabs_Gallery {
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .descriptiontabs {
+        height: 40%;
+        width: 40%;
+        padding: 0.3rem 0.3rem;
+        text-align: center;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    }
+    img{
+        width: 100%;
+    }
+    h2{
+        font-family: Objectivity,Helvetica,sans-serif;
+        font-weight: 500;
+        line-height: 2.5rem;
+        color: #8c7343;
+        
+    }
+    p{
+        font-family: Helvetica,sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        color: #474747;
+    }
+}
