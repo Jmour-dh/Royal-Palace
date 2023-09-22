@@ -10,6 +10,7 @@ function Hotel_Gallery() {
         <div className={styles.Hotel_Gallery}>
             <div className={styles.descriptiontabs}>
                 <img src={hotel1} alt="" />
+
             </div>
             <div className={styles.descriptiontabs}>
                 <img src={hotel2} alt="" />

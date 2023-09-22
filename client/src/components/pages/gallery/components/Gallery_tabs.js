@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Gallery_tabs.module.scss'
 import Hotel_Gallery from './tabsComponents/Hotel_Gallery';
 
 function Gallery_tabs() {
+    useEffect(() => {
+       
+  }, []);
     return (
         <div className={styles.Gallery_tabs}>
                 <div className={styles.tabs}>
-                    <input type="radio" name="tabs" id="tabone" checked="checkout" />
+                    <input type="radio" name="tabs" id="tabone" checked />
                     <label for="tabone">All</label>
                     <div className={styles.tab}>
                             <Hotel_Gallery/>
