@@ -15,7 +15,7 @@ function AdminUsers() {
   }, []);
   return (
     <div>
-    <h1>Liste des Contacts</h1>
+    <h1>Liste des utilisateurs</h1>
     <ol>
       {users.map((user) => (
         <li key={user.id}>

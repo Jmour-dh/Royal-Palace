@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@hookform/resolvers": "^3.3.1",
+    "@syncfusion/ej2-react-calendars": "^23.1.36",
+    "react-big-calendar": "^1.8.4",
+    "yup": "^1.2.0"
+  }
+}

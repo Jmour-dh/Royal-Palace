@@ -1,15 +1,14 @@
-import React from 'react';
+import React from 'react'
+import MyCalendar from '../reserver/components/MyCalendar';
 
 
 function Reserver() {
  
   return (
-    
-    <>
-    <label>Date d'entrée</label>
-    <input type="date" />
-  </>
+    <div>
+      <MyCalendar />
+    </div>
   )
 }
 
-export default Reserver
+export default Reserver;
