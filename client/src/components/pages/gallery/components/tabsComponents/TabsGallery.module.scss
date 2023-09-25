@@ -1,3 +1,5 @@
+@use '../../../../../assets/styles/mixins' as mixins;
+
 .Tabs_Gallery {
 
     width: 100%;
@@ -6,22 +8,25 @@
     justify-content: center;
 
     .descriptiontabs {
-        height: 40%;
         width: 40%;
         padding: 0.3rem 0.3rem;
         text-align: center;
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
+        @include mixins.xs {
+            width: 70%;
+            padding: 0.5rem 0;
+        }
     }
     img{
         width: 100%;
+        
     }
     h2{
         font-family: Objectivity,Helvetica,sans-serif;
         font-weight: 500;
         line-height: 2.5rem;
         color: #8c7343;
-        
+
     }
     p{
         font-family: Helvetica,sans-serif;
