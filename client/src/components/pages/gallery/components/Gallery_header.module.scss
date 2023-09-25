@@ -1,3 +1,5 @@
+@use '../../../../assets/styles/mixins' as mixins;
+
 .Gallery_header{
 
     h1{
@@ -10,6 +12,9 @@
         line-height: 3.375rem;
         margin-bottom: 0.5em;
         text-align: center;
+        @include mixins.xs {
+        font-size: 2rem;
+        }
     }
     .Banner_Gallery{
         width: 100%;

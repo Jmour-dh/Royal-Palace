@@ -38,7 +38,7 @@ function Signup() {
 
   const initialValues = {
     name: "",
-    lName: "",
+    lname: "",
     email: "",
     password: "",
     confirmPassword: "",

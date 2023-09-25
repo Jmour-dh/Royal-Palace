@@ -5,7 +5,7 @@ import BannerImg from "../../../../assets/images/Banner_GalleryImg.jpg"
 function Gallery_header() {
     return (
      <div className={styles.Gallery_header}>
-        <h1>Gallerie Photo Hôtel Royal Palace </h1>
+        <h1>Gallerie Photo Royal Palace </h1>
         <div className={styles.Banner_Gallery}>
             <img src={BannerImg} alt="" />
         </div>

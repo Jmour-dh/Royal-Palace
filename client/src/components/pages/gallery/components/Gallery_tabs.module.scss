@@ -1,3 +1,5 @@
+@use '../../../../assets/styles/mixins' as mixins;
+
 .tabs {
 	display: flex;
 	flex-wrap: wrap;
@@ -13,9 +15,14 @@
 	transition: ease 0.2s;
 	color: white;
 	font-family: Helvetica, sans-serif;
-	font-size: 1.2rem;
+	font-size: 1rem;
     letter-spacing: 1.5px;
 	border: 1px solid #8c7343;
+	@include mixins.xs {
+        font-size: 0.7rem;
+		letter-spacing: 1px;
+
+        }
 }
 
 .tabs .tab {
