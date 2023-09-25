@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./Mycalendar.module.scss";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
 import { createReserve } from "../../../../apis/reserver";
-
 
 function MyCalendar() {
   const navigate = useNavigate();
@@ -45,17 +44,12 @@ function MyCalendar() {
   const submit = handleSubmit(async (reserve) => {
     try {
       clearErrors();
-      // Obtenez l'ID de l'utilisateur depuis le cookie
-      // const user_id = Cookies.get(user.id); // Assurez-vous que 'user_id' correspond au nom du cookie que vous utilisez
-      // reserve.user_id = user_id; // Assurez-vous que votre base de données utilise "user_id"
       await createReserve(reserve);
       navigate("/profile");
     } catch (message) {
       setError("generic", { type: "generic", message });
     }
   });
-
- 
 
   return (
     <div className={styles.homeReser}>
@@ -64,7 +58,6 @@ function MyCalendar() {
           <h4>Réservation</h4>
         </div>
         <form onSubmit={submit}>
-        {/* <input type="number" name="user_id" value={user_id} /> */}
 
           <div className={styles.entree}>
             <label>Date d'entrée</label>
@@ -76,9 +69,9 @@ function MyCalendar() {
             name="dateIn"
             {...register("dateIn")}
           />
-          {/* {errors.dateIn && (
+          {errors.dateIn && (
             <p className="form-error">{errors.dateIn.message}</p>
-          )} */}
+          )}
           <div className={styles.sorti}>
             <label>Date de sorti</label>
             <input
@@ -87,25 +80,25 @@ function MyCalendar() {
               name="dateOut"
               {...register("dateOut")}
             />
-            {/* {errors.dateOut && (
+            {errors.dateOut && (
               <p className="form-error">{errors.dateOut.message}</p>
-            )} */}
+            )}
           </div>
 
           <div className={styles.adult}>
             <label className={styles.adult}>Adulte</label>
             <input type="number" name="adulte" {...register("adulte")} />
-            {/* {errors.adulte && (
+            {errors.adulte && (
               <p className="form-error">{errors.adulte.message}</p>
-            )} */}
+            )}
           </div>
 
           <div className={styles.enfant}>
             <label>Enfant</label>
             <input type="number" name="enfant" {...register("enfant")} />
-            {/* {errors.enfant && (
+            {errors.enfant && (
               <p className="form-error">{errors.enfant.message}</p>
-            )} */}
+            )}
             <div className={styles.select}>
               <label for="select">Chambre</label>
               <select id="chambre" name="chambre" {...register("chambre")}>
@@ -120,24 +113,24 @@ function MyCalendar() {
                 </option>
                 <option value="Chambre VIP">Chambre VIP</option>
               </select>
-              {/* {errors.chambre && (
+              {errors.chambre && (
                 <p className="form-error">{errors.chambre.message}</p>
-              )} */}
+              )}
             </div>
 
             <div className={styles.check}>
               <input type="checkbox" name="check" {...register("check")} />
               <label className={styles.check}>J'accepte</label>
-              {/* {errors.check && (
+              {errors.check && (
                 <p className="form-error">{errors.check.message}</p>
-              )} */}
+              )}
             </div>
           </div>
-          {/* {errors.generic && (
+          {errors.generic && (
             <div className="mb-10">
               <p className="form-error">{errors.generic.message}</p>
             </div>
-          )} */}
+          )}
           <button disabled={isSubmitting}>Reserver</button>
         </form>
       </div>
