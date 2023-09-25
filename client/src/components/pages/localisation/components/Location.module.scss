@@ -85,6 +85,26 @@
 
 }
 
+/*media query*/
+@media (max-width: 500px)
+{
+  .location{
+    font-size: 8px;
+    .temperature{
+      margin-bottom: -7px;
+      font-size: 30px;
+      text-align: center;
+      h2{
+        font-size: 30px;
+      }
+      h4{
+        border-right: none;
+      }
+    }
+  }
+  
+}
+
 
 
 
