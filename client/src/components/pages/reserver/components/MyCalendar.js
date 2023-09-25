@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Mycalendar.module.scss";
-
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
 import { createReserve } from "../../../../apis/reserver";
+
 
 function MyCalendar() {
   const navigate = useNavigate();
@@ -41,15 +41,22 @@ function MyCalendar() {
     initialValues,
     resolver: yupResolver(validationSchema),
   });
+
   const submit = handleSubmit(async (reserve) => {
     try {
       clearErrors();
+      // Obtenez l'ID de l'utilisateur depuis le cookie
+      // const user_id = Cookies.get(user.id); // Assurez-vous que 'user_id' correspond au nom du cookie que vous utilisez
+      // reserve.user_id = user_id; // Assurez-vous que votre base de données utilise "user_id"
       await createReserve(reserve);
       navigate("/profile");
     } catch (message) {
       setError("generic", { type: "generic", message });
     }
   });
+
+ 
+
   return (
     <div className={styles.homeReser}>
       <div className={styles.calendar}>
@@ -57,6 +64,8 @@ function MyCalendar() {
           <h4>Réservation</h4>
         </div>
         <form onSubmit={submit}>
+        {/* <input type="number" name="user_id" value={user_id} /> */}
+
           <div className={styles.entree}>
             <label>Date d'entrée</label>
           </div>
