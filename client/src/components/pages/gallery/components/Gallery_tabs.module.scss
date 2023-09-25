@@ -18,6 +18,11 @@
 	font-size: 1rem;
     letter-spacing: 1.5px;
 	border: 1px solid #8c7343;
+	@include mixins.xs {
+        font-size: 0.7rem;
+		letter-spacing: 1px;
+
+        }
 }
 
 .tabs .tab {
